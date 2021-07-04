@@ -6,14 +6,14 @@ public class Planet{
 	public double xxVel;
 	public double mass;
 	public String imgFileName;
-	double g = 6.67 * 1e-11;
+	
 
-    public Planet(double xxP, double yyP, double xxV,
-              double yyV, double m, String img) {
+  public Planet(double xxP, double yyP, double xxV,
+            double yyV, double m, String img) {
 		this.xxPos = xxP;
 		this.yyPos = yyP;
 		this.xxVel = xxV;
-        this.yyVel = yyV;
+	      this.yyVel = yyV;
 		this.mass = m;
 		this.imgFileName = img;
 	}
@@ -34,6 +34,7 @@ public class Planet{
 	}
 	
 	public double calcForceExertedBy(Planet p) {
+		double g = 6.67 * 1e-11;
 		double f = g * p.mass * this.mass / (calcDistance(p) * calcDistance(p));
 		return f;
 	}
